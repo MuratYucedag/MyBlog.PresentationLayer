@@ -13,7 +13,7 @@
   <ItemGroup>
     <Folder Include="Container\" />
     <Folder Include="ErrorMessage\" />
-    <Folder Include="ValidationRules\" />
+    <Folder Include="ValidationRules\WriterValidation\" />
   </ItemGroup>
 
   <ItemGroup>
