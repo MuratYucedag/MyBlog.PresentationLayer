@@ -1,5 +1,6 @@
 ﻿using MyBlog.BusinessLayer.Abstract;
 using MyBlog.DataAccessLayer.Abstract;
+using MyBlog.DataAccessLayer.EntityFramework;
 using MyBlog.EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -11,25 +12,26 @@ namespace MyBlog.BusinessLayer.Concrete
 {
     public class CategoryManager : ICategoryService
     {
-        ICategoryDal _categoryDal;
+        private readonly ICategoryDal _categoryDal;
+        public CategoryManager(ICategoryDal categoryDal)
+        {
+            _categoryDal = categoryDal;
+        }
         public void TDelete(int id)
         {
-            throw new NotImplementedException();
+            _categoryDal.Delete(id);
         }
-
         public Category TGetById(int id)
         {
-            throw new NotImplementedException();
+            return _categoryDal.GetById(id);    
         }
-
         public List<Category> TGetListAll()
         {
-            throw new NotImplementedException();
+           return _categoryDal.GetListAll();
         }
-
         public void TInsert(Category entity)
         {
-            if(entity.CategoryName!="" && entity.CategoryName.Length>3 && entity.CategoryName.Length < 30)
+            if (entity.CategoryName != "" && entity.CategoryName.Length > 3 && entity.CategoryName.Length < 30)
             {
                 _categoryDal.Insert(entity);
             }
@@ -38,10 +40,9 @@ namespace MyBlog.BusinessLayer.Concrete
                 //hata mesajı
             }
         }
-
         public void TUpdate(Category entity)
         {
-            throw new NotImplementedException();
+            _categoryDal.Update(entity);
         }
     }
 }
