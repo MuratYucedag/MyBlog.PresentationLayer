@@ -1,0 +1,45 @@
+﻿@model List<Article>
+
+<div class="col-lg-8 col-md-8">
+    <div class="breadcrumb__text">
+        <h2>Blog Listesi: <span>Tüm Bloglar</span></h2>
+        <div class="breadcrumb__option">
+            <a href="#">Ana Sayfa</a>
+            <span>Blog Listesi</span>
+        </div>
+    </div>
+
+    @foreach (var item in Model)
+    {
+        <div class="categories__list__post__item">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="categories__post__item__pic set-bg"
+                         data-setbg="@item.ThumbImageUrl">
+                        <div class="post__meta">
+                            <h4>@item.CreatedDate.Day</h4>
+                            <span>@item.CreatedDate.Month</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="categories__post__item__text">
+                        <span class="post__label">Kategori</span>
+                        <h3><a href="#">@item.Title</a></h3>
+                        <ul class="post__widget">
+                            <li>by <span>Yazar</span></li>
+                            <li>3 dk okuma</li>
+                            <li>0 Yorum</li>
+                        </ul>
+                        <p>
+                            @item.Detail.Substring(0,200)...
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+
+
+</div>

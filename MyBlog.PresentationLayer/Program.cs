@@ -10,6 +10,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<ICategoryService,CategoryManager>();
 builder.Services.AddScoped<ICategoryDal,EfCategoryDal>();
 
+builder.Services.AddScoped<IArticleService, ArticleManager>();
+builder.Services.AddScoped<IArticleDal, EfArticleDal>();
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
