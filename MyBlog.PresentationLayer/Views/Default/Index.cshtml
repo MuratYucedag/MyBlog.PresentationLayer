@@ -23,20 +23,10 @@
                 <div class="categories__grid__post">
                     <div class="row">
                         @await Component.InvokeAsync("_BlogListComponentPartial")
+                        
                         <div class="col-lg-4 col-md-4">
                             <div class="sidebar__item">
-                                <div class="sidebar__about__item">
-                                    <div class="sidebar__item__title">
-                                        <h6>About me</h6>
-                                    </div>
-                                    <img src="img/sidebar/sidebar-about.jpg" alt="">
-                                    <h6>Hi every one! I,m <span>Lena Mollein.</span></h6>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                        incididunt ut labore et dolore magna aliqua.
-                                    </p>
-                                    <a href="#" class="primary-btn">Read more</a>
-                                </div>
+                                @await Component.InvokeAsync("_AboutComponentPartial")
                                 <div class="sidebar__follow__item">
                                     <div class="sidebar__item__title">
                                         <h6>Follow me</h6>
