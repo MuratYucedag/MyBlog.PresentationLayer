@@ -27,18 +27,9 @@
                         <div class="col-lg-4 col-md-4">
                             <div class="sidebar__item">
                                 @await Component.InvokeAsync("_AboutComponentPartial")
-                                <div class="sidebar__follow__item">
-                                    <div class="sidebar__item__title">
-                                        <h6>Follow me</h6>
-                                    </div>
-                                    <div class="sidebar__item__follow__links">
-                                        <a href="#"><i class="fa fa-facebook"></i></a>
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                        <a href="#"><i class="fa fa-youtube-play"></i></a>
-                                        <a href="#"><i class="fa fa-instagram"></i></a>
-                                        <a href="#"><i class="fa fa-envelope-o"></i></a>
-                                    </div>
-                                </div>
+
+                                @await Component.InvokeAsync("_SocialMediaComponentPartial")
+                                
                                 <div class="sidebar__feature__item">
                                     <div class="sidebar__item__title">
                                         <h6>Feature Posts</h6>
@@ -97,24 +88,11 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="sidebar__item__banner">
-                                    <img src="img/sidebar/banner.jpg" alt="">
-                                </div>
-                                <div class="sidebar__item__categories">
-                                    <div class="sidebar__item__title">
-                                        <h6>Categories</h6>
-                                    </div>
-                                    <ul>
-                                        <li><a href="#">Recipes <span>128</span></a></li>
-                                        <li><a href="#">Dinner <span>32</span></a></li>
-                                        <li><a href="#">Dessert <span>86</span></a></li>
-                                        <li class="p-left"><a href="#">Smothie <span>25</span></a></li>
-                                        <li class="p-left"><a href="#">Drinks <span>36</span></a></li>
-                                        <li class="p-left"><a href="#">Cakes <span>15</span></a></li>
-                                        <li><a href="#">Vegan <span>63</span></a></li>
-                                        <li><a href="#">Weightloss <span>27</span></a></li>
-                                    </ul>
-                                </div>
+
+
+
+                                @await Component.InvokeAsync("_CategoryComponentPartial")
+
                                 <div class="sidebar__subscribe__item">
                                     <div class="sidebar__item__title">
                                         <h6>Subscribe</h6>

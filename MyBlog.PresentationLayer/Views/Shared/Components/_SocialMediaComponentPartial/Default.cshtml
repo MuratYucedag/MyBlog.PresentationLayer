@@ -1,0 +1,13 @@
+﻿@model List<SocialMedia>
+
+<div class="sidebar__follow__item">
+    <div class="sidebar__item__title">
+        <h6>Bizi Takip Edin</h6>
+    </div>
+    <div class="sidebar__item__follow__links">
+        @foreach(var item in Model)
+        {
+            <a href="@item.LinkUrl"><i class="@item.IconUrl"></i></a>
+        }       
+    </div>
+</div>
