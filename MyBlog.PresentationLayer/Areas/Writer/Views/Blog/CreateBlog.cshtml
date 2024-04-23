@@ -1,4 +1,6 @@
-﻿@{
+﻿@model MyBlog.EntityLayer.Concrete.Article
+
+@{
     ViewData["Title"] = "CreateBlog";
     Layout = "~/Areas/Writer/Views/WriterLayout/Index.cshtml";
 }
@@ -6,11 +8,11 @@
 <div class="main-panel">
     <div class="content-wrapper">
         <div class="page-header">
-            <h3 class="page-title">Form elements</h3>
+            <h3 class="page-title">Yeni Blog Girişi</h3>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Forms</a></li>
-                    <li class="breadcrumb-item active" aria-current="page"> Form elements </li>
+                    <li class="breadcrumb-item"><a href="#">Blog Listem</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"> Yeni Blog </li>
                 </ol>
             </nav>
         </div>
@@ -18,32 +20,31 @@
             <div class="col-md-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Default form</h4>
-                        <p class="card-description">Basic form layout</p>
-                        <form class="forms-sample">
+                        <h4 class="card-title">Yeni Blog Ekleme Paneli</h4>
+                        <p class="card-description">Aşağıdaki alanları eksiksiz olarak doldurunuz.</p>
+                        <form class="forms-sample" method="post">
                             <div class="form-group">
-                                <label for="exampleInputUsername1">Username</label>
-                                <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Username" />
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" />
+                                <label>Blog Başlığı</label>
+                                <input type="text" class="form-control" asp-for="Title" />
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
+                                <label>Blog Kapak Url</label>
+                                <input type="text" class="form-control" asp-for="CoverImageUrl" />
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputConfirmPassword1">Confirm Password</label>
-                                <input type="password" class="form-control" id="exampleInputConfirmPassword1" placeholder="Password" />
+                                <label>Küçük Kapak Url</label>
+                                <input type="text" class="form-control" asp-for="ThumbImageUrl" />
                             </div>
-                            <div class="form-check form-check-flat form-check-primary">
-                                <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input" /> Remember me
-                                </label>
+                            <div class="form-group">
+                                <label>Kategori</label>
+                                @Html.DropDownListFor(x=>x.CategoryId,(List<SelectListItem>)ViewBag.v,new {@class="form-control"})
                             </div>
-                            <button type="submit" class="btn btn-primary mr-2"> Submit </button>
-                            <button class="btn btn-light">Cancel</button>
+                            <div class="form-group">
+                                <label>Blog İçeriği</label>
+                                <textarea class="form-control" rows="10" asp-for="Detail"></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary mr-2"> Blogu Oluştur </button>
                         </form>
                     </div>
                 </div>
@@ -51,5 +52,5 @@
 
         </div>
     </div>
-    
+
 </div>

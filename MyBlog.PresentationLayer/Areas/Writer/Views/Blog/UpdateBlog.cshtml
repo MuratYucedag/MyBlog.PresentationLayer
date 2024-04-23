@@ -1,8 +1,57 @@
-﻿
+﻿@model MyBlog.EntityLayer.Concrete.Article
+
 @{
     ViewData["Title"] = "UpdateBlog";
     Layout = "~/Areas/Writer/Views/WriterLayout/Index.cshtml";
 }
 
-<h1>UpdateBlog</h1>
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="page-header">
+            <h3 class="page-title">Blog Güncelleme Sayfası</h3>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Blog Listem</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"> Yeni Blog </li>
+                </ol>
+            </nav>
+        </div>
+        <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Blog Güncelleme Paneli</h4>
+                        <p class="card-description">Aşağıdaki alanları eksiksiz olarak doldurunuz.</p>
+                        <form class="forms-sample" method="post">
+                            <div class="form-group">
+                                <input type="hidden" asp-for="ArticleId" />
+                                <label>Blog Başlığı</label>
+                                <input type="text" class="form-control" asp-for="Title" />
+                            </div>
+                            <div class="form-group">
+                                <label>Blog Kapak Url</label>
+                                <input type="text" class="form-control" asp-for="CoverImageUrl" />
+                            </div>
+                            <div class="form-group">
+                                <label>Küçük Kapak Url</label>
+                                <input type="text" class="form-control" asp-for="ThumbImageUrl" />
+                            </div>
+                            <div class="form-group">
+                                <label>Kategori</label>
+                                @Html.DropDownListFor(x=>x.CategoryId,(List<SelectListItem>)ViewBag.v,new {@class="form-control"})
+                            </div>
+                            <div class="form-group">
+                                <label>Blog İçeriği</label>
+                                <textarea class="form-control" rows="10" asp-for="Detail"></textarea>
+                            </div>
 
+                            <button type="submit" class="btn btn-success mr-2"> Blogu Güncelle </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
