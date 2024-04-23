@@ -34,8 +34,17 @@ namespace MyBlog.PresentationLayer.Areas.Writer.Controllers
         [HttpGet]
         public IActionResult UpdateBlog(int id)
         {
-            var values = _articleService.TGetById(id);
-            return View(values);
+
+            List<SelectListItem> values = (from x in _categoryService.TGetListAll()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.CategoryName,
+                                               Value = x.CategoryId.ToString()
+                                           }).ToList();
+            ViewBag.v = values;
+
+            var values2 = _articleService.TGetById(id);
+            return View(values2);
         }
 
         [HttpPost]

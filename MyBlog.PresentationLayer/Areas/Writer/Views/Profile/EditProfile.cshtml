@@ -1,0 +1,64 @@
+﻿@model MyBlog.PresentationLayer.Areas.Writer.Models.UserEditViewModel
+
+@{
+    ViewData["Title"] = "EditProfile";
+    Layout = "~/Areas/Writer/Views/WriterLayout/Index.cshtml";
+}
+
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="page-header">
+            <h3 class="page-title">Kullanıcı Profil Sayfası</h3>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Blog Listem</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"> Yeni Blog </li>
+                </ol>
+            </nav>
+        </div>
+        <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Profil Bilgileri Güncelleme Paneli</h4>
+                        <p class="card-description">Aşağıdaki alanları eksiksiz olarak doldurunuz.</p>
+                        <form class="forms-sample" method="post">
+                            <div class="form-group">
+                                <label>Adınız</label>
+                                <input type="text" class="form-control" asp-for="Name" />
+                            </div>
+                            <div class="form-group">
+                                <label>Soyadınız</label>
+                                <input type="text" class="form-control" asp-for="Surname" />
+                            </div>
+                            <div class="form-group">
+                                <label>Kullanıcı Adınız</label>
+                                <input type="text" class="form-control" asp-for="Username" />
+                            </div>
+                            <div class="form-group">
+                                <label>E-Mail Adresiniz</label>
+                                <input type="text" class="form-control" asp-for="Email" />
+                            </div>
+                            <div class="form-group">
+                                <label>Şehir Bilginiz</label>
+                                <input type="text" class="form-control" asp-for="City" />
+                            </div>
+                            <div class="form-group">
+                                <label>Fotoğrafınız</label>
+                                <input type="text" class="form-control" asp-for="ImageUrl" />
+                            </div>
+                            <div class="form-group">
+                                <label>Telefon Numaranız</label>
+                                <input type="text" class="form-control" asp-for="PhoneNumber" />
+                            </div>
+
+                            <button type="submit" class="btn btn-primary mr-2"> Bilgileri Güncelle </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
