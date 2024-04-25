@@ -22,7 +22,7 @@
                     <div class="card-body">
                         <h4 class="card-title">Profil Bilgileri Güncelleme Paneli</h4>
                         <p class="card-description">Aşağıdaki alanları eksiksiz olarak doldurunuz.</p>
-                        <form class="forms-sample" method="post">
+                        <form class="forms-sample" method="post" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label>Adınız</label>
                                 <input type="text" class="form-control" asp-for="Name" />
@@ -45,11 +45,15 @@
                             </div>
                             <div class="form-group">
                                 <label>Fotoğrafınız</label>
-                                <input type="text" class="form-control" asp-for="ImageUrl" />
+                                <input type="file" asp-for="Image" class="form-control" />
                             </div>
                             <div class="form-group">
                                 <label>Telefon Numaranız</label>
                                 <input type="text" class="form-control" asp-for="PhoneNumber" />
+                            </div>
+                            <div class="form-group">
+                                <label>Şifreniz</label>
+                                <input type="password" class="form-control" asp-for="Password" />
                             </div>
 
                             <button type="submit" class="btn btn-primary mr-2"> Bilgileri Güncelle </button>
