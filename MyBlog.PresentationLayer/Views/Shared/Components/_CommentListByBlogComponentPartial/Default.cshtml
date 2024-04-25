@@ -1,0 +1,23 @@
+﻿@model List<Comment>
+
+<div class="single-post__comment">
+    <div class="widget__title">
+        <h4>@Model.Count Yorum</h4>
+    </div>
+
+    @foreach(var item in Model)
+    {
+        <div class="single-post__comment__item">
+            <div class="single-post__comment__item__pic">
+                <img src="~/foodeiblog-master/img/categories/single-post/comment/comment-3.jpg" alt="">
+            </div>
+            <div class="single-post__comment__item__text">
+                <h5>Yorum Ad soyad</h5>
+                <span>@DateTime.Now.ToString("dd-MMM-yyyy")</span>
+                <p>
+                    @item.Description
+                </p>
+            </div>
+        </div>
+    }
+</div>

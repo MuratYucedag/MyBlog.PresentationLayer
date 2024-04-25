@@ -10,6 +10,8 @@ namespace MyBlog.BusinessLayer.Abstract
     public interface IArticleService : IGenericService<Article>
     {
         List<Article> TGetArticlesByWriter(int id);
-        public List<Article> TGetArticlesWithCategoryByWriter(int id);
+        List<Article> TGetArticlesWithCategoryByWriter(int id);
+        List<Article> TGetArticlesWithCategory();
+        Article TGetArticleWithCategoryByArticleId(int id);
     }
 }
